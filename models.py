@@ -11,3 +11,6 @@ class Post(db.Model):
     created = db.DateTimeProperty(auto_now_add = True)
     author = db.ReferenceProperty(User, required = True)
     # TODO - we need an author field here; it should be required
+
+    def get_author(self):
+        return self.author.username
